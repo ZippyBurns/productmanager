@@ -1,0 +1,12 @@
+<div class="container">
+  <h1> Product List</h1>
+  <div *ngFor="let product of allProducts" style="display: inline-block">
+    <img style="max-block-size: 200px" src="{{ product.imgUrl }}">
+    <h2>{{product.title }}</h2>
+    <h2>${{ product.price }}</h2>
+    <button [routerLink]="['/edit/'+product._id]" class="btn btn-primary mr-2">Edit</button>
+
+    <button (click)="deleteProduct(product._id)" class="btn btn-danger">Delete</button>
+  </div>
+</div>
+<!-- <router-outlet></router-outlet> -->

@@ -1,0 +1,32 @@
+<div class="container">
+  <form (submit)="postEdit()">
+    <h6>Create a new product:</h6>
+    <div class="form-group">
+      <p style="color: red">{{titleError}}</p>
+      <label for="{{editProduct.title}}">Product Name:
+        <input class="form-control" type="text" name="editProduct.title" [(ngModel)]="editProduct.title"
+          value="{{editProduct.title}}" />
+      </label>
+    </div>
+
+    <div class="form-group">
+      <p style="color: red">{{ priceError }}</p>
+      <label for="">Price:
+        <input class="form-control" type="text" name="editProduct.price" [(ngModel)]="editProduct.price"
+          value="{{editProduct.price}}" />
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="">Image URL:
+        <input class="form-control" type="text" name="editProduct.imgUrl" [(ngModel)]="editProduct.imgUrl"
+          value="{{editProduct.imgUrl}}" />
+      </label>
+    </div>
+    <div class="form-group">
+      <input type="submit" class="btn btn-success mr-2" value="Update" />
+      <button (click)="deleteProduct(product._id)" class="btn btn-danger">Delete</button>
+
+    </div>
+  </form>
+</div>

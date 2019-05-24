@@ -1,0 +1,28 @@
+<div class="container">
+  <form (submit)="createNewProduct()">
+    <h6>Create a new product:</h6>
+    <div class="form-group">
+      <p style="color: red">{{titleError}}</p>
+      <label for="{{newProduct.title}}">Product Name:
+        <input class="form-control" type="text" name="newProduct.title" [(ngModel)]="newProduct.title" />
+      </label>
+    </div>
+
+    <div class="form-group">
+      <p style="color: red">{{ priceError }}</p>
+      <label for="">Price:
+        <input class="form-control" type="text" name="newProduct.price" [(ngModel)]="newProduct.price" />
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="">Image URL:
+        <input class="form-control" type="text" name="newProduct.imgUrl" [(ngModel)]="newProduct.imgUrl" />
+      </label>
+    </div>
+    <div class="form-group">
+      <input type="submit" class="btn btn-success mr-2" value="Create" />
+      <button [routerLink]="['/inventory']" class="btn btn-secondary">Cancel</button>
+    </div>
+  </form>
+</div>
